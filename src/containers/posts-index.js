@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import _ from 'lodash';
+
 import { fetchPosts } from '../actions';
 import Post from '../components/post';
+
 
 class PostsIndex extends Component {
   componentDidMount() {
@@ -9,10 +12,7 @@ class PostsIndex extends Component {
   }
 
   render() {
-    let post;
-    const posts = Object.keys(this.props.posts).map(key => {
-      post = this.props.posts[key];
-
+    const posts = _.map(this.props.posts, post => {
       return <Post post={post} key={post.id} />
     });
 
