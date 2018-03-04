@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createPost } from '../actions';
 
-class NewPost extends Component {
+class PostNew extends Component {
   constructor(props) {
     super(props);
 
@@ -59,4 +59,4 @@ class NewPost extends Component {
   }
 }
 
-export default connect(null, { createPost })(NewPost);
+export default connect(null, { createPost })(PostNew);

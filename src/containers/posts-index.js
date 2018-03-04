@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import { Link } from 'react-router-dom';
 
 import { fetchPosts } from '../actions';
 import Post from '../components/post';
@@ -18,7 +19,14 @@ class PostsIndex extends Component {
 
     return (
       <div className='row'>
-        {posts}
+        <div className="text-xs-right">
+          <Link className="btn btn-primary" to="/posts/new">
+            Add a Post
+          </Link>
+        </div>
+        <div>
+          {posts}
+        </div>
       </div>
     );
   }
